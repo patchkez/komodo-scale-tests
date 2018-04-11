@@ -60,7 +60,8 @@ for index, coin in enumerate(chains_array):
     " -addnode=" + container_name + " " +
     "-pubkey=" + pubkey + " " +
     "-rpcallowip=0.0.0.0/0 " +
-    "-rpcuser=kmd -rpcpassword=kmd " +
+    "-rpcuser=" + rpcuser + " " +
+    "-rpcpassword=" + rpcpassword + " " +
     "-ac_name=" + coin_name + " " +
     "-ac_supply=1000000 " +
     "-ac_end=0 -ac_reward=0 -ac_halving=0 -ac_decay=0"
