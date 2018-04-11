@@ -5,10 +5,13 @@ chains_array_test = [
 ]
 
 pubkey = 'faef0c6e132c908293d132eb16039e3a779e433dfa152121a51d8d4c949acb46'
+rpcuser = 'kmd'
+rpcpassword = 'kmd'
 
 share_p2p = True
 persistent_volumes = True
-mining = True
+mining = False
+seed_node = 'node1.komodo.rocks'
 
 chains_array = [
   ["SCALE", "14732"],
