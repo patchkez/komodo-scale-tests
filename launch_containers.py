@@ -2,7 +2,9 @@
 import docker
 import pprint
 import sys
-from chains_config import *
+# from .chains_config import *
+from chains_config import chains_array_test, pubkey, rpcuser, rpcpassword, share_p2p, \
+    persistent_volumes, mining, seed_node, chains_array
 
 # initialize things
 pp = pprint.PrettyPrinter(indent=1)
@@ -27,9 +29,9 @@ def launch_containers(batch_id):
             source = "komodo_tests_" + container_name
             mount_volumes = [docker.types.Mount(target, source)]
         else:
-            mount_volume = ''
+            mount_volumes = ''
         # port sharing if needed
-        if share_p2p is True:
+        if share_p2p is True and batch_id == 1:
             ports_sharing = {
                 str(coin_p2p_port) + '/tcp': ('0.0.0.0', coin_p2p_port)}
         else:
@@ -46,6 +48,7 @@ def launch_containers(batch_id):
             seednode = coin_name + '_1'
         # build command string
         commandstr = (
+            "komodod" +
             " " + gen + " " +
             "-addnode=" + seednode + " " +
             "-pubkey=" + pubkey + " " +
