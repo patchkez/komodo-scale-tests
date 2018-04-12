@@ -2,9 +2,7 @@
 import docker
 import pprint
 import sys
-# from .chains_config import *
-from chains_config import chains_array_test, pubkey, rpcuser, rpcpassword, share_p2p, \
-    persistent_volumes, mining, seed_node, chains_array
+from chains_config import *
 
 # initialize things
 pp = pprint.PrettyPrinter(indent=1)

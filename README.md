@@ -9,7 +9,10 @@ Make sure your user is member of docker group, so you can execute docker cli com
 sudo useradd -G docker <user>
 ```
 
-### Build komodod image
+### Build komodod image (optional)
+This step is optional, @emmanux build Docker image and pushed it to Dockerhub. Upon first start of the script,
+image will be downloaded automatically for you from Dockerhub.
+
 Clone the repository with Dockerfiles (these are definitions files how Docker images will be build):
 ```
 cd projects
@@ -18,9 +21,8 @@ git clone https://github.com/Emmanux/kmdplatform
 Build docker image:
 ```
 cd kmdplatform/komodod
-docker build --build-arg KOMODO_BRANCH=dev . -t kmdplatform/komodod:jl777
+docker build --build-arg KOMODO_BRANCH=jl777 . -t kmdplatform/komodod:jl777
 ```
-
 
 ### Docker network
 Create docker network, all our test containers will use it:
